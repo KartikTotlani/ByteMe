@@ -1,0 +1,1216 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+
+
+
+
+<meta name="description" content="OWASP Foundation, the Open Source Foundation for Application Security on the main website for The OWASP Foundation. OWASP is a nonprofit foundation that works to improve the security of software.">
+<meta property="og:description" content="OWASP Foundation, the Open Source Foundation for Application Security on the main website for The OWASP Foundation. OWASP is a nonprofit foundation that works to improve the security of software.">
+<meta propery="og:title" content="OWASP Foundation, the Open Source Foundation for Application Security | OWASP Foundation">
+<meta property="og:url" content="https://owasp.org/">
+<meta property="og:locale" content="en_US">
+
+<!-- should probably look at using article at some point for www-community at least -->
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://owasp.org/www--site-theme/favicon.ico" />
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="X-XSS-Protection" content="1; mode=block">
+
+
+<link rel="canonical" href="https://owasp.org/" />
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4531126-1"></script> -->
+<!-- <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-4531126-1');
+</script> -->
+<!-- Google Analytics -->
+
+
+<script src="https://owasp.org/www--site-theme/assets/js/js.cookie.min.js"></script>
+<script>
+  if(Cookies.get('cookies-ok') == 'true' && window.ga === undefined)
+  {
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-4531126-1', 'auto');
+    ga('send', 'pageview');
+  }
+  else if (Cookies.get('cookies-ok') == 'true')
+  {
+    ga('send', 'pageview');
+  }
+
+  function handleOutboundLinkClicks(event) {
+    var href = '';
+    if(event.target.href == undefined)
+      href = event.target.parentElement.href;
+    else
+      href = event.target.href
+  if(Cookies.get('cookies-ok') == 'true'){  
+    
+    ga('send', 'event', {
+      eventCategory: 'Outbound Link',
+      eventAction: 'click',
+      eventLabel: href,
+      transport: 'beacon'
+    });
+  }
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<!-- End Google Analytics -->
+<link rel="stylesheet" href="https://owasp.org/www--site-theme/assets/css/styles.css">
+<link rel="shortcut icon" type="images/x-icon" href="https://owasp.org/www--site-theme/favicon.ico">
+
+<script src="https://owasp.org/www--site-theme/assets/js/jquery-3.7.1.min.js"></script>
+<script src="https://owasp.org/www--site-theme/assets/js/util.js"></script>
+<script src="https://owasp.org/www--site-theme/assets/js/yaml.min.js"></script>
+<script src="https://owasp.org/www--site-theme/assets/js/kjua.min.js"></script>
+<title>OWASP Foundation, the Open Source Foundation for Application Security | OWASP Foundation</title>
+
+    <script type="text/javascript">
+      $(function(){
+        var baseurl = "https://github.com/OWASP/owasp.github.io/blob/master/";
+        var path = "index.md";
+        $('.repo').html('<a href=' + baseurl + path + '><div class="reset-3c756112--menuItemIcon-206eb252" style="float: left;"><svg preserveAspectRatio="xMidYMid meet" height="1em" width="1em" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 438.549 438.549" stroke="none" class="icon-7f6730be--text-3f89f380"><g><path d="M409.132 114.573c-19.608-33.596-46.205-60.194-79.798-79.8-33.598-19.607-70.277-29.408-110.063-29.408-39.781 0-76.472 9.804-110.063 29.408-33.596 19.605-60.192 46.204-79.8 79.8C9.803 148.168 0 184.854 0 224.63c0 47.78 13.94 90.745 41.827 128.906 27.884 38.164 63.906 64.572 108.063 79.227 5.14.954 8.945.283 11.419-1.996 2.475-2.282 3.711-5.14 3.711-8.562 0-.571-.049-5.708-.144-15.417a2549.81 2549.81 0 0 1-.144-25.406l-6.567 1.136c-4.187.767-9.469 1.092-15.846 1-6.374-.089-12.991-.757-19.842-1.999-6.854-1.231-13.229-4.086-19.13-8.559-5.898-4.473-10.085-10.328-12.56-17.556l-2.855-6.57c-1.903-4.374-4.899-9.233-8.992-14.559-4.093-5.331-8.232-8.945-12.419-10.848l-1.999-1.431c-1.332-.951-2.568-2.098-3.711-3.429-1.142-1.331-1.997-2.663-2.568-3.997-.572-1.335-.098-2.43 1.427-3.289 1.525-.859 4.281-1.276 8.28-1.276l5.708.853c3.807.763 8.516 3.042 14.133 6.851 5.614 3.806 10.229 8.754 13.846 14.842 4.38 7.806 9.657 13.754 15.846 17.847 6.184 4.093 12.419 6.136 18.699 6.136 6.28 0 11.704-.476 16.274-1.423 4.565-.952 8.848-2.383 12.847-4.285 1.713-12.758 6.377-22.559 13.988-29.41-10.848-1.14-20.601-2.857-29.264-5.14-8.658-2.286-17.605-5.996-26.835-11.14-9.235-5.137-16.896-11.516-22.985-19.126-6.09-7.614-11.088-17.61-14.987-29.979-3.901-12.374-5.852-26.648-5.852-42.826 0-23.035 7.52-42.637 22.557-58.817-7.044-17.318-6.379-36.732 1.997-58.24 5.52-1.715 13.706-.428 24.554 3.853 10.85 4.283 18.794 7.952 23.84 10.994 5.046 3.041 9.089 5.618 12.135 7.708 17.705-4.947 35.976-7.421 54.818-7.421s37.117 2.474 54.823 7.421l10.849-6.849c7.419-4.57 16.18-8.758 26.262-12.565 10.088-3.805 17.802-4.853 23.134-3.138 8.562 21.509 9.325 40.922 2.279 58.24 15.036 16.18 22.559 35.787 22.559 58.817 0 16.178-1.958 30.497-5.853 42.966-3.9 12.471-8.941 22.457-15.125 29.979-6.191 7.521-13.901 13.85-23.131 18.986-9.232 5.14-18.182 8.85-26.84 11.136-8.662 2.286-18.415 4.004-29.263 5.146 9.894 8.562 14.842 22.077 14.842 40.539v60.237c0 3.422 1.19 6.279 3.572 8.562 2.379 2.279 6.136 2.95 11.276 1.995 44.163-14.653 80.185-41.062 108.068-79.226 27.88-38.161 41.825-81.126 41.825-128.906-.01-39.771-9.818-76.454-29.414-110.049z"></path></g></svg><span style="padding-left:8px;">Edit on GitHub</span></div></a>');
+      });
+    </script>
+  </head>
+  <body class="base-grid home">
+
+    <div id="blocker"></div>
+
+    <noscript>For full functionality of this site it is necessary to enable JavaScript. Here are the <a href="http://turnonjs.com/"> instructions how to enable JavaScript in your web browser</a>.</noscript>
+    <header role="banner">
+  <div id="banner" class="notice" aria-label="announcement">
+</div>
+
+
+
+
+<style>
+  #banner img {
+    max-width: 30em;
+  }
+
+  @media (max-width: 1131px) {
+    #banner img {
+      max-width: 30em;
+    }
+  }
+
+  @media (max-width: 800px) {
+    #banner img {
+      max-width: 20em;
+    }
+  }
+
+  @media (max-width: 600px) {
+    #banner img {
+      max-width: 20em;
+    }
+  }
+
+  @media (max-width: 450px) {
+    #banner img {
+      max-width: 250px;
+    }
+  }
+</style>
+
+<script type="text/javascript">
+  $(function () {
+    var bannerdata = [];
+    banneryaml = YAML.load('https://owasp.org/assets/sitedata/banner-data.yml');
+    $.each(banneryaml, function (index) {
+      bannerdata.push(this);
+    });
+
+    if (bannerdata.length > 0) {
+      var htmlstring = "";
+      var usebanner = null;
+      var defbanner = null;
+      var checkdate = new Date(); //local time but who cares about the time?
+      bannerdata.forEach(data => {
+        if (data.start) {
+          var start = data.start;
+
+          if (data.start <= checkdate) {
+            if (data.end) {
+
+              var end = data.end;
+              if (checkdate < end) {
+                usebanner = data;
+              }
+            }
+            else
+              usebanner = data;
+          }
+        }
+        else {
+          defbanner = data;
+        }
+      });
+
+      if (defbanner && !usebanner)
+        usebanner = defbanner;
+      if (usebanner) {
+        htmlstring = usebanner.text;
+        htmlstring += "<a href='#' id='close-banner' aria-label='close announcement' style='float:right;'><i class='fa fa-times'></i></a>";
+
+        $("#banner").html(htmlstring);
+        $("#banner").removeClass("notice");
+        $("#banner").addClass(usebanner.type);
+
+        $("#close-banner").click(function() {
+          $(this).closest("#banner").remove();
+            Cookies.set('banner-seen', 'true', { expires: 7 });
+        });
+      }
+    }
+  });
+</script>
+  <div id="popup" class="notice" aria-label="announcement">
+   
+</div>
+
+
+
+
+<style>
+  #banner img {
+    max-width: 30em;
+  }
+
+  @media (max-width: 1131px) {
+    #banner img {
+      max-width: 30em;
+    }
+  }
+
+  @media (max-width: 800px) {
+    #banner img {
+      max-width: 20em;
+    }
+    #popup {
+      visibility: hidden;
+    }
+  }
+
+  @media (max-width: 600px) {
+    #popup {
+      visibility: hidden;
+    }
+    #banner img {
+      max-width: 20em;
+    }
+  }
+
+  @media (max-width: 450px) {
+    #banner img {
+      max-width: 250px;
+    }
+    #popup {
+      visibility: hidden;
+    }
+  }
+</style>
+
+<script type="text/javascript">
+  $(function () {
+    var popdata = [];
+    $("#popup").hide();
+    popyaml = YAML.load('https://owasp.org/assets/sitedata/popup-data.yml');
+    $.each(popyaml, function (index) {
+      popdata.push(this);
+    });
+
+    if (popdata.length > 0) {
+      var htmlstring = "";
+      var usepop = null;
+      var defpop = null;
+      var checkdate = new Date(); //local time but who cares about the time?
+      popdata.forEach(data => {
+        if (data.start) {
+          var start = data.start;
+
+          if (data.start <= checkdate) {
+            if (data.end) {
+
+              var end = data.end;
+              if (checkdate < end) {
+                usepop = data;
+              }
+            }
+            else
+              usepop = data;
+          }
+        }
+        else {
+          defpop = data;
+        }
+      });
+
+      if (defpop && !usepop)
+        usepop = defpop;
+      if (usepop) {
+        htmlstring = usepop.text;
+        htmlstring += "<a href='#' id='close-popup' aria-label='close announcement' style='float:right;'><i class='fa fa-times'></i></a>";
+
+        $("#popup").html(htmlstring);
+        $("#popup").removeClass("notice");
+        $("#popup").addClass(usepop.type);
+        
+        if( Cookies.get('popup-seen')!='true')
+        {
+          $("#popup").show();
+        }
+
+        $("#close-popup").click(function() {
+          $(this).closest("#popup").remove();
+            Cookies.set('popup-seen', 'true', { expires: 7 });
+        });
+      }
+    }
+  });
+</script>
+  <div class="header-wrapper" aria-label="main navigation">
+    <nav class="alt-nav">
+      <a href="#" class="menu-toggler" aria-hidden="true">
+        <i class="fa fa-bars"></i>
+      </a>
+      <a href="https://owasp.org/" class="alt-logo" aria-label="go to homepage">
+          <img src="https://owasp.org/assets/images/logo.png" alt="OWASP logo">
+      </a>
+      <div id="overlay" class="remove-el">
+
+      </div>
+      <!-- jekyll menu stuff -->
+    </nav>
+    
+    <nav class="top-nav" role="navigation" aria-label="primary navigation">
+      <a href="https://owasp.org/" class="desktop-logo" aria-label="go to homepage">
+        <img src="https://owasp.org/assets/images/logo.png" alt="">
+      </a>
+      <!-- jekyll menu stuff -->
+      <div id="midmenu" class="top-nav"></div>
+      
+      
+
+      <div class="interactive-wrapper">                
+        <div class="nav-button" aria-label="donate to or join OWASP">
+        
+          <a href="https://owasp.org/store" class="cta-button white inset"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Store</a>
+          <a href="https://owasp.org/donate?reponame=owasp.github.io" class="cta-button green">Donate</a>
+          <a href="https://owasp.org/membership" class="cta-button">Join</a>
+        </div>
+      </div>
+    </nav>
+    <div id='disclaimer-container'>
+<div id="disclaimer">
+    <p>This website uses cookies to analyze our traffic and only share that information with our analytics partners.</p><a class="disclaimerOK">Accept</a>
+</div>
+<div id="close-disclaimer">x</div>
+</div>
+  </div>
+  <div class="mobile" style="width:100%;display: flex; justify-content: space-evenly;align-items: center;padding: 8px; background-color: #98afc7;">
+    <div><a href="https://owasp.org/store" class="cta-button white inset"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Store</a></div>
+    <div><a href="https://owasp.org/donate?reponame=owasp.github.io" class="cta-button green">Donate</a></div>
+    <div><a href="https://owasp.org/membership" class="cta-button">Join</a></div>
+  </div>
+
+
+
+<script type="text/javascript">
+  $(function(){
+      
+      url = $(location).attr('href');
+      if(url.includes('www2'))
+      {
+        url = url.replace(/www2./, '');
+        $(location).attr('href',url);
+        return;
+      }
+    // this works to get data from a json file NOT in data
+      $.getJSON("https://owasp.org/www--site-theme/assets/sitedata/menus.json", function(data) {
+         var listr = "<ul aria-label='header menu'>";
+         
+         var mlistr = "<ul class='mobile-menu hide-el' role='navigation' aria-label='mobile primary navigation'>";
+
+          mlistr += "<li><a href='#' class='menu-toggler' aria-hidden='true'><i class='fa fa-times'></i></a></li>";
+          mlistr += "<li>";
+          mlistr += "<form role='search' method='get' action='https://owasp.org/search'>";   
+          mlistr += "<div class='search-div'>";
+          mlistr += "<input id='searchString' aria-label='search input' name='searchString' class='search-bar' type='search' placeholder='Search OWASP.org' required='true'>";
+          mlistr += "<button id='search-button' aria-label='search button' type='submit' class='fa fa-search' style='padding-left: 8px;'></button></div></form>";
+          mlistr += "</li>";
+          $.each(data.menus, function (ndx, menu){
+              listr += "<li><a href='" + menu.url + "'>" + menu.title + "</a>";
+              searchitem = issearch(menu.title);
+              if(!menu.items && !searchitem)
+              {
+                  mlistr += "<li><a href='" + menu.url + "'>" + menu.title + "</a>";
+              }
+              
+              if(menu.items){
+                  listr += "<ul class='dropdown-menu'>";
+                  if(!searchitem) {
+                    mlistr += "<button class='accordion'>" + menu.title + "</button>";
+                    mlistr += "<div class='panel'>";
+                    mlistr += "<ul>";
+                  }
+                $.each(menu.items, function(ndx, item){
+                
+                  if(item.separator)
+                  {
+                      listr += "<li class='separator'>";
+                      if(!searchitem)
+                        mlistr += "<li class='separator'>";
+                  }
+                  else
+                  {
+                      listr += "<li>";
+                      if(!searchitem)
+                        mlistr += "<li>";
+                  }
+                  listr += "<a href='" + item.url + "'";
+                  if(!searchitem)
+                    mlistr += "<a href='" + item.url + "'";
+                  if(item.opentab)
+                  {
+                    listr += " target='_blank' rel='noopener noreferrer'";
+                    if(!searchitem)
+                      mlistr += " target='_blank' rel='noopener noreferrer'";
+                  }
+
+                  listr += ">" + item.title + "</a></li>";
+                  if(!searchitem)
+                    mlistr += ">" + item.title + "</a></li>";
+                });
+                listr += "</ul>";
+                if(!searchitem){
+                  mlistr += "</ul>";
+                  mlistr += "</div>";
+                }
+              }
+              
+              listr += "</li>";
+              if(!searchitem)
+                mlistr += "</li>";
+          });
+          listr += "</ul>";
+          mlistr += "<li><a href='https://owasp.org/donate'>MAKE A DONATION</a></li>";
+          mlistr += "<li><a href='https://owasp.org/membership'>BECOME A MEMBER</a></li>";
+          mlistr += "<li><a href='https://owasp.org/sitemap'>SITEMAP</a></li>";
+          mlistr += "</ul>";
+          
+          //$('.desktop-logo').after(listr);
+          $('#midmenu').html(listr);
+          $('#overlay').after(mlistr);
+
+          $(".accordion").click(function () {
+              $(this).toggleClass("active");
+              if($(this).next('.panel').css('display') == 'block'){
+                $(this).next('.panel').css('display', 'none');
+              }
+              else {
+                $(this).next('.panel').css('display', 'block');
+              }
+            });
+            $(".menu-toggler").click(function() {
+              $(".mobile-menu").toggleClass('hide-el');
+            });
+      });
+    });
+
+    function issearch(title) {
+      return title.indexOf('fa fa-search') > -1;
+    }
+  </script>
+</header>
+
+    
+    <main role="main">      
+      <div style="margin-left:auto;margin-right:auto;width:100%;text-align:center;margin-bottom:100px;">
+        <form style="display:inline-block;" role="search" method="get" action="https://owasp.org/search"> 
+          <h1 class="bigheader">Explore the world<br>of cyber security</h1> 
+          <p>Driven by volunteers, OWASP resources are accessible for everyone.</p> 
+          <div class='search-div'>
+            <input id="searchString" name="searchString" class="search-bar" type="search" placeholder="Search OWASP.org" required="true">
+            <button id="search-button" type="submit" class="fa fa-search">
+            </button>
+          </div>  
+        </form>
+      </div>
+      <div class="main-wrapper">        
+        <!-- Discoverable Feeds -->
+<link rel="alternate" type="application/atom+xml" title="OWASP" href="https://owasp.org/feed.xml" />
+
+<link rel="alternate" type="application/json" title="OWASP" href="https://owasp.org/feed.json" />
+
+<link rel="alternate" type="application/rss+xml" title="OWASP" href="https://owasp.org/rss.xml" />
+
+<!-- Rebuild Site Tag 194 -->
+
+<div class="homepage-promo" style="background: url(/assets/images/content/ams-preso-new.jpg) no-repeat center center;background-size: cover;">
+  <!--<img src="/assets/images/content/ams-preso-new.jpg" alt="Presentation at Global AppSec AMS">-->
+</div>
+
+<hr class="mobile" />
+
+<section class="homepage-welcome">
+</section>
+
+<hr />
+
+<div style="display:grid;grid-column: 1/3; background-color:#fff;">
+  <style>
+.outer {
+    display: block;
+    background-color: black;
+    color: white;
+    padding: 8px;
+    margin-bottom: 12px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 180px 180px;
+    gap: 4px;
+    color: white;
+}
+    
+.box1 {
+grid-column: 1;
+grid-row: 1 / 3;
+background: linear-gradient(145deg, black, blue);
+border-radius: 8px;
+padding: 12px;
+}
+
+.box2 {
+grid-column: 2;
+grid-row: 1;
+background: linear-gradient(145deg, black, gray);
+border-radius: 8px;
+padding: 12px;
+}
+
+.box3 {
+grid-column: 2;
+grid-row: 2;
+background: linear-gradient(145deg, black, gray);
+border-radius: 8px;
+padding: 12px;
+}
+
+.proj-spotlight {
+display: grid;
+grid-template-columns: 1fr 2fr 1fr;
+grid-template-rows: 100px 50px 50px 100px;
+gap: 4px;
+}
+
+.proj-nonspot {
+display: grid;
+grid-template-columns: 1fr 2fr 1fr;
+grid-template-rows: 70px 10px 70px;
+gap: 4px;
+}
+
+.pstype {
+    grid-column: 1;
+    grid-row: 1;
+    font-size: smaller;
+    border: 2px solid white;
+    border-radius: 8px;
+    max-height: 40px;
+    line-height: 40px;
+    margin: auto;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.pstitle {
+    grid-row: 4;
+    grid-column: 1;
+    font-size: larger;
+    font-weight: bold;
+}
+
+.pstitle2 {
+    grid-row: 3;
+    grid-column: 1;
+    font-size: larger;
+    font-weight: bold;
+}
+
+.psdesc {
+    grid-row: 4;
+    grid-column: 2;
+}
+
+.psdesc2 {
+    grid-row: 3;
+    grid-column: 2;
+}
+
+.psnav {
+    grid-row: 4;
+    grid-column: 3;
+    vertical-align: middle;
+    margin-left: 50%;
+}
+
+.psnav2 {
+    grid-row: 3;
+    grid-column: 3;
+    vertical-align: middle;
+    margin-left: 50%;
+}
+
+.navbox {
+    background-color:#369505;
+    color: white;
+    font-weight: bold;
+    padding: 2px;
+    border-radius: 8px;
+    width: 45px;
+    height: 45px;
+    text-align:center;
+    line-height: 45px;
+}
+
+.buffer {
+    padding: 12px;
+}
+
+.idea-container {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 20px;
+    margin-right: 20px;
+    display: grid;
+    grid-template-columns: .25fr 1fr 1.5fr .5fr;
+    grid-template-rows: 200px 50px 50;
+    gap: 12px;
+}
+
+.lightbulb {
+    grid-column: 1;
+    grid-row: 1;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.idea {
+    grid-column: 2;
+    grid-row: 1;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.grow {
+    grid-column: 3;
+    grid-row: 1;
+    font-size: smaller;
+    text-align:center;
+}
+
+.start {
+    grid-column: 4;
+    grid-row: 1;
+}
+
+.hr {
+    grid-column: 1/5;
+    grid-row: 2;
+    border: 2px solid gray;
+}
+
+.seeall {
+    float: right;
+}
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-rows: 315px 315px 315px;
+    }
+
+    .seeall {
+        float: none;
+    }
+
+    .box1 {
+        grid-row: 1;
+        grid-column: 1/3;
+    }
+
+    .box2 {
+        grid-column: 1/3;
+        grid-row: 2;
+    }
+
+    .box3 {
+        grid-column: 1/3;
+        grid-row: 3;
+    }
+
+    .pstype {
+        grid-column: 1/3;
+    }
+
+    .proj-spotlight {
+        grid-template-rows: 70px 10px 70px;
+    }
+
+    .pstitle {
+        grid-row: 3;
+        grid-column: 1/3;
+    }
+    .psdesc {
+        grid-row: 4;
+    }
+
+    .pstitle2 {
+        grid-column: 1 / 3;
+    }
+
+    .psdesc2 {
+        grid-row: 4;
+    }
+
+    .start {
+        grid-row: 3;
+        grid-column: 1/4;
+    }
+}
+
+</style>
+
+
+
+<div class="outer">
+    <div class="buffer">Quick access to our highlighted <br /><strong><i class="fas fa-flag fa-1x" style="color:#38a047;padding-right:4px;"></i>flagship</strong> resources<div class="seeall">See all <a href="/projects/#flagship-projects">flagship resources</a>(15)</div></div>
+    <div class="container">
+        <div class="box1">
+            <div class="proj-spotlight">
+                <div class="pstype">Documentation</div>
+                <div class="pstitle">Top Ten</div>
+                <div class="psdesc">The reference standard for the most critical web application security risks</div>
+                <div class="psnav">
+                    <a href="/www-project-top-ten/"><div class="navbox">&#8594;</div></a>
+                </div>
+            </div>
+        </div>
+        <div class="box2">
+            <div class="proj-nonspot">
+                <div class="pstype">Documentation</div>
+                <div class="pstitle2">ASVS</div>
+                <div class="psdesc2">Application security verification standard</div>
+                <div class="psnav2">
+                    <a href="/www-project-application-security-verification-standard/"><div class="navbox">&#8594;</div></a>
+                </div>
+            </div>
+        </div>
+        <div class="box3">
+            <div class="proj-nonspot">
+                <div class="pstype">Documentation</div>
+                <div class="pstitle2">Cheat Sheets</div>
+                <div class="psdesc2">List of crucial app security information</div>
+                <div class="psnav2">
+                    <a href="/www-project-cheat-sheets/"><div class="navbox">&#8594;</div></a>
+                </div>
+            </div>
+        </div>    
+    </div>
+</div>
+
+<div class="idea-container">
+<div class="lightbulb"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></div><div class="idea">Have an <span style="color:blue;">idea</span> for a project?</div>
+<div class="grow">Take advantage of our resources and<br />let it grow with OWASP.</div>
+<div class="start"><a href="https://owasporg.atlassian.net/servicedesk/customer/portal/7/create/70" class="cta-button">Start a project</a></div>
+<hr class="hr" />
+</div>
+
+
+<script type="text/javascript">
+var mtxt = "[{\"name\":\"Amass\",\"repo\":\"www-project-amass\",\"shortname\":\"Amass\",\"mediablurb\":\"Visualize your network attack surfaces and external assets\"},{\"name\":\"Application Security Verification Standard\",\"repo\":\"www-project-application-security-verification-standard\",\"shortname\":\"ASVS\",\"mediablurb\":\"The industry standard for web application security verification\"},{\"name\":\"Cheat Sheets\",\"repo\":\"www-project-cheat-sheets\",\"shortname\":\"Cheat Sheets\",\"mediablurb\":\"List of crucial app security information\"},{\"name\":\"CycloneDX\",\"repo\":\"www-project-cyclonedx\",\"shortname\":\"CycloneDX\",\"mediablurb\":\"BOM standard for advanced supply chain cybersecurity risk mitigation\"},{\"name\":\"DefectDojo\",\"repo\":\"www-project-defectdojo\",\"shortname\":\"DefectDojo\",\"mediablurb\":\"Leading vulnerability management platform for DevSecOps\"},{\"name\":\"Dependency Check\",\"repo\":\"www-project-dependency-check\",\"shortname\":\"Dependency Check\",\"mediablurb\":\"SCA tool suite to check for dependency vulnerabilities\"},{\"name\":\"Dependency Track\",\"repo\":\"www-project-dependency-track\",\"shortname\":\"Dependency Track\",\"mediablurb\":\"Component analysis platform to identify risks in the supply chain\"},{\"name\":\"Juice Shop\",\"repo\":\"www-project-juice-shop\",\"shortname\":\"Juice Shop\",\"mediablurb\":\"Modern and sophisticated intentionally non-secure web application\"},{\"name\":\"Mobile App Security\",\"repo\":\"www-project-mobile-app-security\",\"shortname\":\"MAS\",\"mediablurb\":\"The industry standard for mobile application security verification\"},{\"name\":\"Modsecurity Core Rule Set\",\"repo\":\"www-project-modsecurity-core-rule-set\",\"shortname\":\"CRS\",\"mediablurb\":\"Dominant Web Application Firewall rule set for ModSecurity and compatible WAFs\"},{\"name\":\"Owtf\",\"repo\":\"www-project-owtf\",\"shortname\":\"OWTF\",\"mediablurb\":\"Web testing framework for pentesters\"},{\"name\":\"Samm\",\"repo\":\"www-project-samm\",\"shortname\":\"SAMM\",\"mediablurb\":\"Software assurance maturity model to improve security posture\"},{\"name\":\"Security Knowledge Framework\",\"repo\":\"www-project-security-knowledge-framework\",\"shortname\":\"SKF\",\"mediablurb\":\"Security knowledge framework of secure coding principles\"},{\"name\":\"Security Shepherd\",\"repo\":\"www-project-security-shepherd\",\"shortname\":\"Security Shepherd\",\"mediablurb\":\"Web and mobile application training platform\"},{\"name\":\"Top Ten\",\"repo\":\"www-project-top-ten\",\"shortname\":\"Top10\",\"mediablurb\":\"Most critical security risks in web applications\"},{\"name\":\"Web Security Testing Guide\",\"repo\":\"www-project-web-security-testing-guide\",\"shortname\":\"WSTG\",\"mediablurb\":\"Testing resource for web application and security professionals\"},{\"name\":\"ZAP\",\"repo\":\"www-project-zap\",\"shortname\":\"ZAP\",\"mediablurb\":\"Highly popular web application security scanning tool\"}]";
+var gMedia = JSON.parse(mtxt);
+
+$(function(){
+       var allprj = "[{\"name\":\"Amass\",\"url\":\"https://owasp.org/www-project-amass/\",\"created\":\"2019-09-12\",\"updated\":\"2023-08-08\",\"build\":\"built\",\"codeurl\":\"https://github.com/owasp-amass/amass\",\"title\":\"OWASP Amass\",\"level\":\"4\",\"type\":\"code\",\"region\":\"Unknown\",\"pitch\":\"An open source framework that helps information security professionals perform network mapping of attack surfaces and external asset discovery using open source intelligence gathering and reconnaissance techniques!\",\"meetup-group\":\"\",\"country\":\"\"},{\"name\":\"Application Security Verification Standard\",\"url\":\"https://owasp.org/www-project-application-security-verification-standard/\",\"created\":\"2019-09-12\",\"updated\":\"2024-01-20\",\"build\":\"built\",\"codeurl\":\"https://github.com/OWASP/ASVS https://github.com/OWASP/ASVS\",\"title\":\"OWASP Application Security Verification Standard\",\"level\":\"4\",\"type\":\"standards\",\"region\":\"Unknown\",\"pitch\":\"The OWASP Application Security Verification Standard (ASVS) Project is a framework of security requirements that focus on defining the security controls required when designing, developing and testing modern web applications and web services.\",\"meetup-group\":\"\",\"country\":\"\"},{\"name\":\"Cheat Sheets\",\"url\":\"https://owasp.org/www-project-cheat-sheets/\",\"created\":\"2019-09-12\",\"updated\":\"2024-02-20\",\"build\":\"built\",\"codeurl\":\"https://github.com/OWASP/CheatSheetSeries https://github.com/OWASP/CheatSheetSeries\",\"title\":\"OWASP Cheat Sheet Series\",\"level\":\"4\",\"type\":\"documentation\",\"region\":\"Unknown\",\"pitch\":\"The OWASP Cheat Sheet Series project provides a set of concise good practice guides for application developers and defenders to follow.\",\"meetup-group\":\"\",\"country\":\"\"},{\"name\":\"Cyclonedx\",\"url\":\"https://owasp.org/www-project-cyclonedx/\",\"created\":\"2021-06-04\",\"updated\":\"2023-12-19\",\"build\":\"built\",\"codeurl\":\"\",\"title\":\"OWASP CycloneDX\",\"level\":\"4\",\"type\":\"standards\",\"region\":\"Unknown\",\"pitch\":\"OWASP CycloneDX is a full-stack Bill of Materials (BOM) standard that provides advanced supply chain capabilities for cyber risk reduction.\",\"meetup-group\":\"\",\"country\":\"\"},{\"name\":\"Defectdojo\",\"url\":\"https://owasp.org/www-project-defectdojo/\",\"created\":\"2019-09-12\",\"updated\":\"2024-01-24\",\"build\":\"built\",\"codeurl\":\"https://github.com/DefectDojo/django-DefectDojo https://github.com/DefectDojo/django-DefectDojo\",\"title\":\"OWASP Defectdojo\",\"level\":\"4\",\"type\":\"code\",\"region\":\"Unknown\",\"pitch\":\"The leading open source application vulnerability management tool built for DevOps and continuous security integration.\",\"meetup-group\":\"\",\"country\":\"\"},{\"name\":\"Dependency Check\",\"url\":\"https://owasp.org/www-project-dependency-check/\",\"created\":\"2019-09-12\",\"updated\":\"2023-09-19\",\"build\":\"built\",\"codeurl\":\"https://github.com/jeremylong/DependencyCheck\",\"title\":\"OWASP Dependency-Check\",\"level\":\"4\",\"type\":\"code\",\"region\":\"Unknown\",\"pitch\":\"Dependency-Check is a Software Composition Analysis (SCA) tool suite that identifies project dependencies and checks if there are any known, publicly disclosed, vulnerabilities.\",\"meetup-group\":\"\",\"country\":\"\"},{\"name\":\"Dependency Track\",\"url\":\"https://owasp.org/www-project-dependency-track/\",\"created\":\"2019-09-12\",\"updated\":\"2023-12-04\",\"build\":\"built\",\"codeurl\":\"\",\"title\":\"OWASP Dependency-Track\",\"level\":\"4\",\"type\":\"code\",\"region\":\"Unknown\",\"pitch\":\"Intelligent Component Analysis platform that allows organizations to identify and reduce risk in the software supply chain.\",\"meetup-group\":\"\",\"country\":\"\"},{\"name\":\"Juice Shop\",\"url\":\"https://owasp.org/www-project-juice-shop/\",\"created\":\"2019-09-12\",\"updated\":\"2024-03-16\",\"build\":\"built\",\"codeurl\":\"https://github.com/juice-shop/juice-shop https://github.com/juice-shop/juice-shop#from-sources\",\"title\":\"OWASP Juice Shop\",\"level\":\"4\",\"type\":\"code\",\"region\":\"Unknown\",\"pitch\":\"Probably the most modern and sophisticated insecure web application for security trainings, awareness demos and CTFs. Also great voluntary guinea pig for your security tools and DevSecOps pipelines!\",\"meetup-group\":\"\",\"country\":\"\"},{\"name\":\"Mobile App Security\",\"url\":\"https://owasp.org/www-project-mobile-app-security/\",\"created\":\"2019-09-12\",\"updated\":\"2024-01-10\",\"build\":\"built\",\"codeurl\":\"https://github.com/OWASP/owasp-mastg https://github.com/OWASP/owasp-mastg\",\"title\":\"OWASP Mobile Application Security\",\"level\":\"4\",\"type\":\"documentation\",\"region\":\"Unknown\",\"pitch\":\"The OWASP Mobile Application Security (MAS) project consists of a series of documents that establish a security standard for mobile apps and a comprehensive testing guide that covers the processes, techniques, and tools used during a mobile application security assessment, as well as an exhaustive set of test cases that enables testers to deliver consistent and complete results.\",\"meetup-group\":\"\",\"country\":\"\"},{\"name\":\"Modsecurity Core Rule Set\",\"url\":\"https://owasp.org/www-project-modsecurity-core-rule-set/\",\"created\":\"2019-09-12\",\"updated\":\"2024-02-06\",\"build\":\"built\",\"codeurl\":\"https://github.com/coreruleset/coreruleset https://github.com/coreruleset/coreruleset\",\"title\":\"OWASP ModSecurity Core Rule Set\",\"level\":\"4\",\"type\":\"code\",\"region\":\"Unknown\",\"pitch\":\"The OWASP ModSecurity Core Rule Set (CRS) is a set of generic attack detection rules for use with ModSecurity or compatible web application firewalls. The CRS aims to protect web applications from a wide range of attacks, including the OWASP Top Ten, with a minimum of false alerts.\",\"meetup-group\":\"\",\"country\":\"\"},{\"name\":\"Owtf\",\"url\":\"https://owasp.org/www-project-owtf/\",\"created\":\"2019-09-12\",\"updated\":\"2024-01-24\",\"build\":\"built\",\"codeurl\":\"https://github.com/owtf/owtf https://github.com/owtf/owtf\",\"title\":\"OWASP OWTF\",\"level\":\"4\",\"type\":\"code\",\"region\":\"Unknown\",\"pitch\":\"Offensive Web Testing Framework (OWTF), is an OWASP+PTES focused try to unite great tools and make pen testing more efficient, written mostly in Python.\",\"meetup-group\":\"\",\"country\":\"\"},{\"name\":\"Samm\",\"url\":\"https://owasp.org/www-project-samm/\",\"created\":\"2019-09-12\",\"updated\":\"2024-01-15\",\"build\":\"built\",\"codeurl\":\"https://github.com/OWASP/SAMM https://github.com/owaspsamm/core\",\"title\":\"OWASP SAMM\",\"level\":\"4\",\"type\":\"documentation\",\"region\":\"Unknown\",\"pitch\":\"A Software Assurance Maturity Model (SAMM) that provides an effective and measurable way for all types of organizations to analyse and improve their software security posture.\",\"meetup-group\":\"owasp-samm\",\"country\":\"\"},{\"name\":\"Security Shepherd\",\"url\":\"https://owasp.org/www-project-security-shepherd/\",\"created\":\"2019-09-12\",\"updated\":\"2023-11-12\",\"build\":\"built\",\"codeurl\":\"https://github.com/OWASP/SecurityShepherd\",\"title\":\"OWASP Security Shepherd\",\"level\":\"4\",\"type\":\"code\",\"region\":\"Unknown\",\"pitch\":\"OWASP Security Shepherd is a web and mobile application security training platform. Security Shepherd has been designed to foster and improve security awareness among a varied skill-set demographic. The aim of this project is to take AppSec novices or experienced engineers and sharpen their penetration testing skillset to security expert status.\",\"meetup-group\":\"\",\"country\":\"\"},{\"name\":\"Top Ten\",\"url\":\"https://owasp.org/www-project-top-ten/\",\"created\":\"2019-09-12\",\"updated\":\"2024-03-10\",\"build\":\"built\",\"codeurl\":\"https://github.com/OWASP/Top10\",\"title\":\"OWASP Top Ten\",\"level\":\"4\",\"type\":\"documentation\",\"region\":\"Unknown\",\"pitch\":\"The OWASP Top 10 is the reference standard for the most critical web application security risks. Adopting the OWASP Top 10 is perhaps the most effective first step towards changing your software development culture focused on producing secure code.\",\"meetup-group\":\"\",\"country\":\"\"},{\"name\":\"Web Security Testing Guide\",\"url\":\"https://owasp.org/www-project-web-security-testing-guide/\",\"created\":\"2019-09-12\",\"updated\":\"2024-03-15\",\"build\":\"built\",\"codeurl\":\"https://github.com/OWASP/wstg https://github.com/OWASP/wstg\",\"title\":\"OWASP Web Security Testing Guide\",\"level\":\"4\",\"type\":\"documentation\",\"region\":\"Unknown\",\"pitch\":\"The Web Security Testing Guide (WSTG) Project produces the premier cybersecurity testing resource for web application developers and security professionals.\",\"meetup-group\":\"\",\"country\":\"\"}]";
+       var projects = JSON.parse(allprj);
+
+       bigpick = Math.floor(Math.random() * projects.length);
+       pick2 = bigpick;
+       pick3 = bigpick;
+       do {
+        pick2 = Math.floor(Math.random() * projects.length);
+       }while(pick2 == bigpick);
+       do {
+        pick3 = Math.floor(Math.random() * projects.length);
+       }while(pick3 == bigpick || pick3 == pick2);
+
+       html = '<div class="buffer">Quick access to our highlighted <br><strong><i class="fas fa-flag fa-1x" style="color:#38a047;padding-right:4px;"></i>flagship</strong> resources<div class="seeall">See all <a href="/projects/#flagship-projects">flagship resources</a>(15)</div></div>';
+       html += '<div class="container">';
+       
+       html += getBoxContent(projects[bigpick], "box1");
+       html += getBoxContent(projects[pick2], "box2");
+       html += getBoxContent(projects[pick3], "box3");
+       html += '</div>';
+       $('.outer').html(html);
+    });
+
+function getProjectMediaText(project) {
+    mediaret = ["unknown","unknown"]
+    
+    for(ndx in gMedia){
+        if(project.url.indexOf(gMedia[ndx].repo) > -1){
+            mediaret[0] = gMedia[ndx].shortname;
+            mediaret[1] = gMedia[ndx].mediablurb;
+            break;
+        }
+    }
+    if(mediaret[0] == "unknown"){
+        alert(project.url);
+    }
+    return mediaret;
+}
+
+function getProjectContent(project, boxtype) { 
+    pstitle = 'pstitle';
+    psdesc = 'psdesc';
+    psnav = 'psnav';
+    if(boxtype != 1){
+            pstitle += '2';
+            psdesc += '2';
+            psnav += '2';
+    }
+
+    media = getProjectMediaText(project)
+
+    var html = '<div class="pstype">' + project.type + '</div>';
+    html += '<div class="' + pstitle + '">' + media[0] + '</div>'; // this needs to change to shortname
+    html += '<div class="' + psdesc + '">' + media[1] + '</div>'; // this needs to change to shorttext once it exists
+    html += '<div class="' + psnav + '">';
+    html += '<a href="' + project.url + '"><div class="navbox">&#8594;</div></a>';
+    html += '</div>';
+    return html;
+}
+
+function getBoxContent(project, box) {
+    var html = '<div class="' + box + '">';
+    boxtype = 1;
+    if(box == "box1"){
+        html +=  '<div class="proj-spotlight">'; 
+        boxtype = 1;
+    } else {
+        html += '<div class="proj-nonspot">';
+        if (box == "box2"){
+            boxtype = 2;
+        } else {
+            boxtype = 3;
+        }
+        
+    }
+    html += getProjectContent(project, boxtype);
+    html += '</div>';
+    html += '</div>';
+    return html;
+}
+</script>
+
+</div>
+
+<hr class="mobile" />
+
+<div style="display:grid;grid-column: 1/3; background-color:#fff;">
+  <section id="featured_events">
+<div id="ev0" style="display:none;">
+    
+    <p><a href="https://lisbon.globalappsec.org/"><img src="/assets/images/Lisbon1.png" alt="OWASP 2024 Global AppSec Lisbon" width="100%" height="auto" /></a></p>
+
+<h3 id="conference-registration-is-open">Conference Registration is Open!</h3>
+<h3 id="exhibitor-and-sponsorship-opportunities-are-being-accepted">Exhibitor and Sponsorship opportunities are being accepted!</h3>
+
+<p>Participate in the OWASP 2024 Global AppSec Lisbon event alongside 700+ cybersecurity experts from June 24-28 at the Lisbon Congress Center in Lisbon, Portugal. Immerse yourself in insightful presentations by globally recognized keynote speakers, choose from our diverse range of five tracks, explore the exhibitor hall, and foster connections with fellow security professionals. Take advantage of our comprehensive training options*, available for one, two, and three days from June 24-26, followed by two conference days on June 27-28. Training requires a separate ticket. <a href="https://lisbon.globalappsec.org/">Conference Registration</a> is open! Exhibitor and sponsorship opportunities are now available.</p>
+
+
+</div>
+<div id="ev1" style="display:none;">
+    
+    <p><a href="https://dc.globalappsec.org/"><img src="/assets/images/AppSec_DC_2023_Banner_1200x300_V01.jpeg" alt="OWASP 2023 Global AppSec DC" width="100%" height="auto" /></a></p>
+
+<h3 id="registration-open">Registration Open!</h3>
+
+<p><a href="https://www.eventbrite.com/e/owasp-global-appsec-washington-dc-2023-tickets-519195877847">Join us</a> in Washington DC, USA Oct 30 - Nov 3, for leading application security technologies, speakers, prospects, and community, in a unique event that will build on everything you already know to expect from an OWASP Global Conference.</p>
+
+<p>Designed for private and public sector infosec professionals, the two-day OWASP conference followed by three days of training equips developers, defenders, and advocates to build a more secure web. Join us for leading application security technologies, speakers, prospects, and the community, in a unique event that will build on everything you already know to expect from an OWASP Global Conference.</p>
+
+
+</div>
+<div id="ev2" style="display:none;">
+    
+    <p><a href="https://lisbon.globalappsec.org/"><img src="/assets/images/Lisbon1.png" alt="OWASP 2024 Global AppSec Lisbon" width="100%" height="auto" /></a></p>
+
+<h3 id="conference-registration-is-open">Conference Registration is Open!</h3>
+<h3 id="exhibitor-and-sponsorship-opportunities-are-being-accepted">Exhibitor and Sponsorship opportunities are being accepted!</h3>
+
+<p>Participate in the OWASP 2024 Global AppSec Lisbon event alongside 700+ cybersecurity experts from June 24-28 at the Lisbon Congress Center in Lisbon, Portugal. Immerse yourself in insightful presentations by globally recognized keynote speakers, choose from our diverse range of five tracks, explore the exhibitor hall, and foster connections with fellow security professionals. Take advantage of our comprehensive training options*, available for one, two, and three days from June 24-26, followed by two conference days on June 27-28. Training requires a separate ticket. <a href="https://lisbon.globalappsec.org/">Conference Registration</a> is open! Exhibitor and sponsorship opportunities are now available.</p>
+
+
+</div>
+<div id="ev3" style="display:none;">
+    
+    <p><a href="https://dc.globalappsec.org/"><img src="/assets/images/AppSec_DC_2023_Banner_1200x300_V01.jpeg" alt="OWASP 2023 Global AppSec DC" width="100%" height="auto" /></a></p>
+
+<h3 id="registration-open">Registration Open!</h3>
+
+<p><a href="https://www.eventbrite.com/e/owasp-global-appsec-washington-dc-2023-tickets-519195877847">Join us</a> in Washington DC, USA Oct 30 - Nov 3, for leading application security technologies, speakers, prospects, and community, in a unique event that will build on everything you already know to expect from an OWASP Global Conference.</p>
+
+<p>Designed for private and public sector infosec professionals, the two-day OWASP conference followed by three days of training equips developers, defenders, and advocates to build a more secure web. Join us for leading application security technologies, speakers, prospects, and the community, in a unique event that will build on everything you already know to expect from an OWASP Global Conference.</p>
+
+
+</div>
+<div id="ev4" style="display:none;">
+    
+    <p><a href="https://lisbon.globalappsec.org/"><img src="/assets/images/Lisbon1.png" alt="OWASP 2024 Global AppSec Lisbon" width="100%" height="auto" /></a></p>
+
+<h3 id="conference-registration-is-open">Conference Registration is Open!</h3>
+<h3 id="exhibitor-and-sponsorship-opportunities-are-being-accepted">Exhibitor and Sponsorship opportunities are being accepted!</h3>
+
+<p>Participate in the OWASP 2024 Global AppSec Lisbon event alongside 700+ cybersecurity experts from June 24-28 at the Lisbon Congress Center in Lisbon, Portugal. Immerse yourself in insightful presentations by globally recognized keynote speakers, choose from our diverse range of five tracks, explore the exhibitor hall, and foster connections with fellow security professionals. Take advantage of our comprehensive training options*, available for one, two, and three days from June 24-26, followed by two conference days on June 27-28. Training requires a separate ticket. <a href="https://lisbon.globalappsec.org/">Conference Registration</a> is open! Exhibitor and sponsorship opportunities are now available.</p>
+
+
+</div>
+<div id="ev5" style="display:none;">
+    
+    <p><a href="https://dc.globalappsec.org/"><img src="/assets/images/AppSec_DC_2023_Banner_1200x300_V01.jpeg" alt="OWASP 2023 Global AppSec DC" width="100%" height="auto" /></a></p>
+
+<h3 id="registration-open">Registration Open!</h3>
+
+<p><a href="https://www.eventbrite.com/e/owasp-global-appsec-washington-dc-2023-tickets-519195877847">Join us</a> in Washington DC, USA Oct 30 - Nov 3, for leading application security technologies, speakers, prospects, and community, in a unique event that will build on everything you already know to expect from an OWASP Global Conference.</p>
+
+<p>Designed for private and public sector infosec professionals, the two-day OWASP conference followed by three days of training equips developers, defenders, and advocates to build a more secure web. Join us for leading application security technologies, speakers, prospects, and the community, in a unique event that will build on everything you already know to expect from an OWASP Global Conference.</p>
+
+
+</div>
+<div id="ev6" style="display:none;">
+    
+    <p><a href="https://lisbon.globalappsec.org/"><img src="/assets/images/Lisbon1.png" alt="OWASP 2024 Global AppSec Lisbon" width="100%" height="auto" /></a></p>
+
+<h3 id="conference-registration-is-open">Conference Registration is Open!</h3>
+<h3 id="exhibitor-and-sponsorship-opportunities-are-being-accepted">Exhibitor and Sponsorship opportunities are being accepted!</h3>
+
+<p>Participate in the OWASP 2024 Global AppSec Lisbon event alongside 700+ cybersecurity experts from June 24-28 at the Lisbon Congress Center in Lisbon, Portugal. Immerse yourself in insightful presentations by globally recognized keynote speakers, choose from our diverse range of five tracks, explore the exhibitor hall, and foster connections with fellow security professionals. Take advantage of our comprehensive training options*, available for one, two, and three days from June 24-26, followed by two conference days on June 27-28. Training requires a separate ticket. <a href="https://lisbon.globalappsec.org/">Conference Registration</a> is open! Exhibitor and sponsorship opportunities are now available.</p>
+
+
+</div>
+<div id="ev7" style="display:none;">
+    
+    <p><a href="https://dc.globalappsec.org/"><img src="/assets/images/AppSec_DC_2023_Banner_1200x300_V01.jpeg" alt="OWASP 2023 Global AppSec DC" width="100%" height="auto" /></a></p>
+
+<h3 id="registration-open">Registration Open!</h3>
+
+<p><a href="https://www.eventbrite.com/e/owasp-global-appsec-washington-dc-2023-tickets-519195877847">Join us</a> in Washington DC, USA Oct 30 - Nov 3, for leading application security technologies, speakers, prospects, and community, in a unique event that will build on everything you already know to expect from an OWASP Global Conference.</p>
+
+<p>Designed for private and public sector infosec professionals, the two-day OWASP conference followed by three days of training equips developers, defenders, and advocates to build a more secure web. Join us for leading application security technologies, speakers, prospects, and the community, in a unique event that will build on everything you already know to expect from an OWASP Global Conference.</p>
+
+
+</div>
+<div id="ev8" style="display:none;">
+    
+    <p><a href="https://lisbon.globalappsec.org/"><img src="/assets/images/Lisbon1.png" alt="OWASP 2024 Global AppSec Lisbon" width="100%" height="auto" /></a></p>
+
+<h3 id="conference-registration-is-open">Conference Registration is Open!</h3>
+<h3 id="exhibitor-and-sponsorship-opportunities-are-being-accepted">Exhibitor and Sponsorship opportunities are being accepted!</h3>
+
+<p>Participate in the OWASP 2024 Global AppSec Lisbon event alongside 700+ cybersecurity experts from June 24-28 at the Lisbon Congress Center in Lisbon, Portugal. Immerse yourself in insightful presentations by globally recognized keynote speakers, choose from our diverse range of five tracks, explore the exhibitor hall, and foster connections with fellow security professionals. Take advantage of our comprehensive training options*, available for one, two, and three days from June 24-26, followed by two conference days on June 27-28. Training requires a separate ticket. <a href="https://lisbon.globalappsec.org/">Conference Registration</a> is open! Exhibitor and sponsorship opportunities are now available.</p>
+
+
+</div>
+<div id="ev9" style="display:none;">
+    
+    <p><a href="https://dc.globalappsec.org/"><img src="/assets/images/AppSec_DC_2023_Banner_1200x300_V01.jpeg" alt="OWASP 2023 Global AppSec DC" width="100%" height="auto" /></a></p>
+
+<h3 id="registration-open">Registration Open!</h3>
+
+<p><a href="https://www.eventbrite.com/e/owasp-global-appsec-washington-dc-2023-tickets-519195877847">Join us</a> in Washington DC, USA Oct 30 - Nov 3, for leading application security technologies, speakers, prospects, and community, in a unique event that will build on everything you already know to expect from an OWASP Global Conference.</p>
+
+<p>Designed for private and public sector infosec professionals, the two-day OWASP conference followed by three days of training equips developers, defenders, and advocates to build a more secure web. Join us for leading application security technologies, speakers, prospects, and the community, in a unique event that will build on everything you already know to expect from an OWASP Global Conference.</p>
+
+
+</div>
+</section>
+
+
+<script type="text/javascript">
+    $(function(){
+        numdivs = 2;
+        
+        id = Math.floor(Math.random() * numdivs);
+        strdiv = "ev" + id;
+        $('#' + strdiv).show();
+    });
+</script>
+  
+ 
+</div>
+<hr />
+
+<div style="display:grid;grid-column: 1/3; background-color:#fff;">
+ <section id="upcoming">
+<h3> Upcoming at OWASP</h3>
+
+<iframe src="https://calendar.google.com/calendar/embed?src=hl6cjgs6ep1h7oniqgueu2bhbo%40group.calendar.google.com&amp;ctz=America%2FChicago" style="border: 0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+
+</section>
+</div>
+<hr />
+
+<section class="homepage-blog">
+  <h2><a href="/blog/2024/03/07/OWASP-CycloneDX-is-ready-to-support-your-CRA-compliance-journey.html">OWASP CycloneDX is ready to support your CRA compliance journey!</a></h2>
+<a><img src="/assets/images/people/Olle-E-Johansson.jpg" alt="image" /></a>
+<p class="author"><a>Olle E. Johansson</a><span style="color:#7C7C7C">, March  7, 2024</span></p>
+<p><p><em>Software development aimed at selling products in the European Union will soon change forever. Regardless of whether the product is an IoT device, a child’s toy with embedded software, a server-side application, or a mobile app - the software will have to be marked with the CE symbol, which will include cybersecurity aspects on the product. At the heart of the new regulation, the EU Cyber Resilience Act, is the software bill of materials (SBOM). OWASP CycloneDX stands well prepared with specifications of bill-of-materials and an arsenal of tools that will help manufacturers in their compliance process.</em></p>
+
+<a href="/blog/2024/03/07/OWASP-CycloneDX-is-ready-to-support-your-CRA-compliance-journey.html">...read more</a></p>
+</section>
+
+<hr class="mobile" />
+
+<section class="news-events" aria-label="news and events section">
+  <h3>Recent OWASP News &amp; Opinions</h3>
+  <ul>
+  
+    <li><a href="/blog/2024/03/01/iot-security-testing-guide.html">Introducing the OWASP IoT Security Testing Guide (ISTG)</a><span style="color:#7C7C7C">, March  1, 2024</span></li>	
+  
+    <li><a href="/blog/2024/02/12/OWASP-appoints-Jason-C-McDonald.html">OWASP appoints Jason C. McDonald as Director of Community Development</a><span style="color:#7C7C7C">, February 12, 2024</span></li>	
+  
+    <li><a href="/blog/2024/02/08/OWASP-joins-NIST-AISIC-launch-announcment_post.html">OWASP joins the US AI Safety Institute Consortium (AISIC) at its launch to support collaborative efforts to safeguard AI.</a><span style="color:#7C7C7C">, February  8, 2024</span></li>	
+  
+    <li><a href="/blog/2024/01/09/ModSecurity.html">Trustwave Transfers ModSecurity Custodianship to OWASP</a><span style="color:#7C7C7C">, January  9, 2024</span></li>	
+  	
+  </ul>	
+  <h3>Upcoming Conferences</h3>
+  <ul>
+  
+  
+  
+  <li><a href="https://lisbon.globalappsec.org/" target="_blank" rel="noopener noreferrer">OWASP Global AppSec Lisbon 2024</a><span style="color:#7C7C7C">, June 24-28, 2024</span></li>
+  
+  <li><a href="https://sf.globalappsec.org/" target="_blank" rel="noopener noreferrer">OWASP Global AppSec San Francisco 2024</a><span style="color:#7C7C7C">, September 23-27, 2024</span></li>
+  
+  <li><a href="" target="_blank" rel="noopener noreferrer">OWASP Global AppSec Washington DC 2025</a><span style="color:#7C7C7C">, November 3-7, 2025</span></li>
+  
+  <li><a href="" target="_blank" rel="noopener noreferrer">OWASP Global AppSec San Francisco 2026</a><span style="color:#7C7C7C">, November 2-6, 2026</span></li>
+  
+ </ul>
+</section>
+
+<hr class="mobile" />
+
+
+        <hr>
+        <div class="repo"></div>
+      </div>
+      
+    </main>
+    
+    <footer>
+  
+  <section class="member">
+
+  <script type="text/javascript">
+    var members = [];
+    var plat_indices = [];
+    var gold_indices = [];
+    var other_indices = [];
+
+    function get_next_member(members, indexUsed){
+      // random 6
+      // 0 to 2 = Platinum (.2 > Other)
+      // 3 to 4 = Gold (.1 > Other)
+      // 5 = Other  
+      member = null;
+      chosenIndex = -1;
+      var pick = Math.floor(Math.random() * 100);      
+      var randomIndex = -1;
+      if(pick < 44){
+        // pick a platinum member
+        randomIndex = Math.floor(Math.random() * plat_indices.length);
+        pIndex = plat_indices[randomIndex];            
+        cycleIndex = randomIndex
+        while(chosenIndex == -1)
+        {
+          randomIndex++;
+          if(indexUsed.indexOf(pIndex)== -1){
+            chosenIndex = pIndex;
+            
+          }else if(randomIndex >= plat_indices.length){
+            randomIndex = 0;
+            
+          }
+          if (randomIndex == cycleIndex){ // we could not find a plat member not already in the list....            
+            break;
+          }
+        }
+      }
+      if (chosenIndex == -1 && pick < 77) {
+        // pick a gold member
+        randomIndex = Math.floor(Math.random() * gold_indices.length);
+        pIndex = gold_indices[randomIndex];            
+        cycleIndex = randomIndex
+        while(chosenIndex == -1)
+        {
+          randomIndex++;
+          if(indexUsed.indexOf(pIndex)== -1){
+            chosenIndex = pIndex;
+            
+          }else if(randomIndex >= gold_indices.length){
+            randomIndex = 0;
+            
+          }
+          if (randomIndex == cycleIndex){ // we could not find a plat member not already in the list....            
+            break;
+          }
+        }
+      }
+      if (chosenIndex == -1){
+        // pick an other member
+        randomIndex = Math.floor(Math.random() * other_indices.length);
+        pIndex = other_indices[randomIndex];            
+        cycleIndex = randomIndex
+        while(chosenIndex == -1)
+        {
+          randomIndex++;
+          if(indexUsed.indexOf(pIndex)== -1){
+            chosenIndex = pIndex;
+            
+          }else if(randomIndex >= other_indices.length){
+            randomIndex = 0;
+            
+          }
+          if (randomIndex == cycleIndex){ // we could not find a plat member not already in the list....            
+            break;
+          }
+        }
+      }    
+      if(chosenIndex >= 0){          
+        member = members[chosenIndex];
+        indexUsed.push(chosenIndex);
+        var membertype = 'not a member';
+        if(member.member && (member.membertype == 1 || !member.membertype))
+          membertype = 'silver member';
+        else if(member.member && member.membertype == 2)
+          membertype = 'platinum member';
+        else if(member.member && member.membertype == 3)
+          membertype = 'gold member';
+        else if(member.member && member.membertype)
+          membertype = member.membertype;        
+      }
+      return member;      
+    }
+
+    $(function() {  
+      var corp_members = YAML.load('https://owasp.org/assets/sitedata/corp_members.yml');
+      $.each(corp_members, function (index) {
+          index = members.push(this) - 1;  
+          if(this.member && this.membertype == 3)
+            gold_indices.push(index);
+          else if (this.member && this.membertype == 2)
+            plat_indices.push(index);
+          else
+            other_indices.push(index);        
+        });
+
+        var indexUsed = [];
+
+        var counter = 0;
+        var numberOfImages = 9;
+        var member = get_next_member(members, indexUsed);
+        htmlstring = '<h2>Spotlight: ' + member["name"] + '</h2>';
+        htmlstring += '<a href="'+ member["url"] + '" rel="sponsored nopener noreferrer" target="_blank" onclick="handleOutboundLinkClicks(event);"><img src="https://owasp.org' + member["image"] + '" alt="image" /></a>';
+        htmlstring += '<p>' + member["description"] + '</p>';
+        $(".member-spotlight").html(htmlstring);
+
+        if(members.length > 0)
+        {
+          var htmlstring = "";
+          while (counter < numberOfImages)
+          {
+            member = get_next_member(members, indexUsed)
+            if (member)
+            {
+                counter++;
+                htmlstring += '<a href="'+ member["url"] + '" class="member-logo" rel="sponsored noopener noreferrer" target="_blank" onclick="handleOutboundLinkClicks(event);"><img src="https://owasp.org' + member["image"] + '" alt="image"/></a>';                                
+            }
+          }
+
+          $("#corp_member_div").html(htmlstring);
+         
+          
+        }
+    });
+  </script>
+  <div class="member-wrapper">
+    <section class="member-spotlight">
+    </section>
+    <section class="member-list">
+      <h2>Corporate Supporters</h2>
+      <div id="corp_member_div">
+      </div>
+      <div class="member-cta">
+        <a class="callout-link" href="https://owasp.org/supporters">Become a corporate supporter</a>
+      </div>
+    </section>
+  </div>
+</section>
+
+  
+  <section class="footer-wrapper">
+    <section class="social">
+<a href="https://github.com/OWASP/" aria-label="github organization" target="_blank" rel="noopener noreferrer"><i class="fa fa-lg fa-github"></i></a>
+<a href="https://owasp.org/slack/invite" aria-label="slack group" target="_blank" rel="noopener noreferrer"><i class="fa fa-lg fa-slack"></i></a>
+<a href="https://www.facebook.com/OWASPFoundation" aria-label="facebook group" target="_blank" rel="noopener noreferrer"><i class="fa fa-lg fa-facebook-square"></i></a>
+<!-- Twitter X Icon will not load; I suspect another dependency (Jekyll?) is using an older version that is conflicting. So use the SVG instead-->
+<a href="https://twitter.com/owasp" aria-label="twitter account" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg></a>
+<a href="https://www.linkedin.com/company/owasp/" aria-label="linkedin account" target="_blank" rel="noopener noreferrer"><i class="fa fa-lg fa-linkedin"></i></a>
+<a href="https://www.youtube.com/user/OWASPGLOBAL" aria-label="youtube account" target="_blank" rel="noopener noreferrer"><i class="fa fa-lg fa-youtube-square"></i></a>
+</section>
+
+    <nav class="bot-nav" role="navigation" aria-label="secondary navigation">
+      <ul>
+        <li><a href="https://owasp.org/">HOME</a></li>
+        <li><a href="https://owasp.org/projects/">PROJECTS</a></li>
+        <li><a href="https://owasp.org/chapters/">CHAPTERS</a></li>
+        <li><a href="https://owasp.org/events/">EVENTS</a></li>
+        <li><a href="https://owasp.org/about/">ABOUT</a></li>
+        <li><a href="https://owasp.org/www-policy/operational/privacy">PRIVACY</a></li>
+        <li><a href="https://owasp.org/sitemap/">SITEMAP</a></li>
+        <li><a href="https://owasp.org/contact/">CONTACT</a></li>
+      </ul>
+    </nav>
+    <p class="disclaimer">
+      OWASP, the OWASP logo, and Global AppSec are registered trademarks and AppSec Days, AppSec California, AppSec Cali, SnowFROC, and LASCON are trademarks of the OWASP Foundation, Inc. Unless otherwise specified, all content on the site is Creative Commons Attribution-ShareAlike v4.0 and provided without warranty of service or accuracy. For more information, please refer to our <a href="/www-policy/operational/general-disclaimer.html">General Disclaimer</a>. OWASP does not endorse or recommend commercial products or services, allowing our community to remain vendor neutral with the collective wisdom of the best minds in software security worldwide. Copyright 2024, OWASP Foundation, Inc.
+    </p>
+  </section>
+</footer>
+
+
+  </body>
+</html>
